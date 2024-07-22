@@ -15,13 +15,13 @@ spec:
     spec: 
       containers:
       - name: mon
-        image: mongo:4.4.6
+        image: mongo:latest
         command:
             - "numactl"
             - "--interleave=all"
             - "mongod"
             - "--wiredTigerCacheSizeGB"
-            - "0.1"
+            - "0.25"
             - "--bind_ip"
             - "0.0.0.0"
         ports:

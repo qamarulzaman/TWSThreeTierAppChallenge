@@ -4,9 +4,12 @@ metadata:
   name: frontend
   namespace: three-tier
 spec:
-  ports:
-  - port: 3000
-    protocol: TCP
-  type: ClusterIP
   selector:
-    role: frontend
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 32081   # Choose a nodePort (e.g., 32081) that is not in use and accessible
+  type: NodePort   # Change type from ClusterIP to NodePort
+
