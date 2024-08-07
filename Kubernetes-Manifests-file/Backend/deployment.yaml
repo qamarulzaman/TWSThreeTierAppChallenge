@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: 159.89.239.177:32100/backend:latest
+        image: node:18-alpine
         imagePullPolicy: Always
         env:
           - name: MONGO_CONN_STR
